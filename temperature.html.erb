@@ -1,0 +1,44 @@
+<html>
+<h1>Temperature Converter</h1>
+<p>Let's find a temperature and convert it:</p>
+<p>Celsius to Fahrenheit: F = C * 9/5 + 32</p>
+<p>Celsius to Kelvin: K = C + 273.15</p>
+<p>Fahrenheit to Kelvin: K = (F - 459.67) * 5/9</p>
+<p>Fahrenheit to Celsius: C = (F - 32) * 5/9</p>
+<p>Kelvin to Celsius: C = K - 273.15</p>
+<p>Kelvin to Fahrenheit: F = K * 9/5 + 459.67</p>
+
+<body>
+<script>
+  var tstart = <%= @tstart %>;
+  var d1 = "<%= @d1 %>";
+  var d2 = "<%= @d2 %>";
+  var n = 0.0;
+  if (d1 === "f") {
+    if (d2 === "c") {
+      n = (tstart - 32.0) * (5.0/9.0);
+      document.write("Result: " + n);
+    } else if (d2 === "k") {
+      n = (tstart - 459.67) * (5.0/9.0);
+      document.write("Result: " + n);
+    }
+  } else if (d1 === "c") {
+    if (d2 === "f") {
+      n = tstart * (9.0/5.0) + 32.0;
+      document.write("Result: " + n);
+    } else if (d2 === "k") {
+      n = tstart + 273.15;
+      document.write("Result: " + n);
+    }
+  } else if (d1 === "k") {
+    if (d2 === "c") {
+      n = tstart - 273.15;
+      document.write("Result: " + n);
+    } else if (d2 === "f") {
+      n = tstart * (9.0/5.0) + 459.67;
+      document.write("Result: " + n);
+    }
+  }
+</script>
+</body>
+</html>
